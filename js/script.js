@@ -1,4 +1,5 @@
 const sortButton = document.getElementById("sort");
+const method = document.getElementById("sorting-method");
 
 const sortInputArray = (event) => {
   event.preventDefault();
@@ -7,7 +8,15 @@ const sortInputArray = (event) => {
     ...document.getElementsByClassName("values-dropdown"),
   ].map((dropdown) => Number(dropdown.value));
 
-  const sortedValues = insertionSort(inputValues);
+  let sortedValues;
+
+  if (method === "bubbleSort") {
+    sortedValues = bubbleSort(inputValues);
+  } else if (method === "selectionSort") {
+    sortedValues = selectionSort(inputValues);
+  } else {
+    sortedValues = insertionSort(inputValues);
+  }
 
   updateUI(sortedValues);
 };

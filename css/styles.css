@@ -123,6 +123,21 @@ button:focus-visible {
   color: var(--danger-color);
 }
 
+#select-sort {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 30px;
+}
+
+#sorting-method {
+  width: auto;
+}
+
+#sorting-method option {
+  width: 100%;
+}
+
 @media (min-width: 550px) {
   form,
   .output-container {
